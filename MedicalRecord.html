@@ -68,7 +68,24 @@ img {
 </div>
 
 
-<pre class="r"><code>kable(MDF)</code></pre>
+<p>First create a data frame for the Medical Record.</p>
+<pre class="r"><code>MRDF &lt;- data.frame(ID = c(255, 638, 956, 551, 980), kg = c(116, 86, 72, 63, 114), cm = c(172, 176, 157, 169, 163), ease = factor(c(&quot;Difficult&quot;, &quot;Easy&quot;, &quot;Difficult&quot;, &quot;Easy&quot;, &quot;Impossible&quot;), levels = c(&quot;Easy&quot;, &quot;Difficult&quot;,&quot;Impossible&quot;)), treatment = factor(c(&quot;Traditional Sitting&quot;, &quot;Hamstring Stretch&quot;, &quot;Traditional Sitting&quot;, &quot;Hamstring Stretch&quot;, &quot;Traditional Sitting&quot;)), oc = c(0, 0, 0, 2, 0))
+MRDF</code></pre>
+<pre><code>   ID  kg  cm       ease           treatment oc
+1 255 116 172  Difficult Traditional Sitting  0
+2 638  86 176       Easy   Hamstring Stretch  0
+3 956  72 157  Difficult Traditional Sitting  0
+4 551  63 169       Easy   Hamstring Stretch  2
+5 980 114 163 Impossible Traditional Sitting  0</code></pre>
+<pre class="r"><code>str(MRDF)</code></pre>
+<pre><code>'data.frame':   5 obs. of  6 variables:
+ $ ID       : num  255 638 956 551 980
+ $ kg       : num  116 86 72 63 114
+ $ cm       : num  172 176 157 169 163
+ $ ease     : Factor w/ 3 levels &quot;Easy&quot;,&quot;Difficult&quot;,..: 2 1 2 1 3
+ $ treatment: Factor w/ 2 levels &quot;Hamstring Stretch&quot;,..: 2 1 2 1 2
+ $ oc       : num  0 0 0 2 0</code></pre>
+<p>Here is the Table:</p>
 <table>
 <thead>
 <tr class="header">
@@ -123,14 +140,6 @@ img {
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>str(MDF)</code></pre>
-<pre><code>'data.frame':   5 obs. of  6 variables:
- $ ID       : int  255 638 956 551 980
- $ kg       : int  116 86 72 63 114
- $ cm       : int  172 176 157 169 163
- $ ease     : Factor w/ 3 levels &quot;Difficult&quot;,&quot;Easy&quot;,..: 1 2 1 2 3
- $ treatment: Factor w/ 2 levels &quot;Hamstring Stretch&quot;,..: 2 1 2 1 2
- $ oc       : int  0 0 0 2 0</code></pre>
 <ul>
 <li><code>ID</code> is a unique patient identifier.</li>
 <li><code>kg</code> numeric variable that records the weight of the parturient woman.</li>

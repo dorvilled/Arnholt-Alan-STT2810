@@ -5,17 +5,18 @@ date: "January 11, 2015"
 output: html_document
 ---
 
-```{r label = setup, echo = FALSE, message = FALSE}
-library(PASWR2)
-library(knitr)
-set.seed(14)
-ID <- sample(1:1000, 5)
-MDF <- cbind(ID, EPIDURALF[1:5, 2:6])
+First create a data frame for the Medical Record.
+```{r label = setup, comment = NA}
+MRDF <- data.frame(ID = c(255, 638, 956, 551, 980), kg = c(116, 86, 72, 63, 114), cm = c(172, 176, 157, 169, 163), ease = factor(c("Difficult", "Easy", "Difficult", "Easy", "Impossible"), levels = c("Easy", "Difficult","Impossible")), treatment = factor(c("Traditional Sitting", "Hamstring Stretch", "Traditional Sitting", "Hamstring Stretch", "Traditional Sitting")), oc = c(0, 0, 0, 2, 0))
+MRDF
+str(MRDF)
 ```
 
-```{r comment = NA}
-kable(MDF)
-str(MDF)
+Here is the Table:
+
+```{r comment = NA, echo = FALSE}
+library(knitr)
+kable(MRDF)
 ```
 
 * `ID` is a unique patient identifier.
