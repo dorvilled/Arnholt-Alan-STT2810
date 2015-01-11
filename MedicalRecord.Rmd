@@ -1,0 +1,26 @@
+---
+title: "Medical Record"
+author: "Alan T. Arnholt"
+date: "January 11, 2015"
+output: html_document
+---
+
+```{r label = setup, echo = FALSE, message = FALSE}
+library(PASWR2)
+library(knitr)
+set.seed(14)
+ID <- sample(1:1000, 5)
+MDF <- cbind(ID, EPIDURALF[1:5, 2:6])
+```
+
+```{r comment = NA}
+kable(MDF)
+str(MDF)
+```
+
+* `ID` is a unique patient identifier.
+* `kg` numeric variable that records the weight of the parturient woman.
+* `cm` numeric variable that records the height of the parturient woman.
+* `ease` categorical variable (factor) with three levels Easy, Difficult, and Impossible.
+* `treatment` categorical variable (factor)  with two levels Hamstring Stretch, and Traditional Sitting.
+* `oc` numeric variable that record the number of obstructive contacts.
